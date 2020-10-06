@@ -1,0 +1,57 @@
+server:
+  port: 1818
+#tomcat:
+#  remote-ip-header: x-forward-for
+#  uri-encoding: UTF-8
+#  max-threads: 10
+#  background-processor-delay: 30
+spring:
+  application:
+    name: ag-sso
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #        server-addr: localhost:8848
+  #  http:
+  #    encoding:
+  #      force: true
+  #      charset: UTF-8
+  #    application:
+  #      name: spring-cloud-study-netty-websocket
+#  freemarker:
+#    request-context-attribute: req
+#    #prefix: /templates/
+#    suffix: .html
+#    content-type: text/html
+#    enabled: true
+#    cache: false
+#    charset: UTF-8
+#    allow-request-override: false
+#    expose-request-attributes: true
+#    expose-session-attributes: true
+#    expose-spring-macro-helpers: true
+    # 数据源
+  jpa:
+    database-platform: "org.hibernate.dialect.MySQL8Dialect"
+    show-sql: true
+    open-in-view: true
+  datasource:
+    name: hikari
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://114.215.147.142:3306/me_oauth?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+#
+ag:
+  jwt:
+    keyPairName: jwt.jks
+    keyPairAlias: jwt
+    keyPairSecret: 12345678
+    keyPairStoreSecret: 123456
+# 以下为微信测试号配置
+wechat:
+  mp:
+    appId: wx82f1a4549401243e
+    secret: 26dc6bd2f719cafe1b9763260ba6182d
+    token: 123456
