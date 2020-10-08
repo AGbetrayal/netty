@@ -22,10 +22,15 @@ import java.util.Map;
  * @date 2018年2月8日上午11:25:39
  */
 @RequiredArgsConstructor
+//@Component
 public class WeiXinAuthenticationProvider implements AuthenticationProvider {
 
-    private final PostAuthenticationHandler<UserPrincipal, WxMpUser> authenticationHandler;
+    // private final PostAuthenticationHandler<UserPrincipal, WxMpUser> authenticationHandler;
+    private PostAuthenticationHandler<UserPrincipal, WxMpUser> authenticationHandler;
 
+    public WeiXinAuthenticationProvider(PostAuthenticationHandler<UserPrincipal, WxMpUser> authenticationHandler) {
+        this.authenticationHandler = authenticationHandler;
+    }
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         var wxMpUser = (WxMpUser) authentication.getPrincipal();

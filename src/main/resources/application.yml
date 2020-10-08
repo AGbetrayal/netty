@@ -11,7 +11,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        #server-addr: 127.0.0.1:8848
+        server-addr: 192.168.0.101:8848
   #        server-addr: localhost:8848
   #  http:
   #    encoding:
@@ -55,3 +56,7 @@ wechat:
     appId: wx82f1a4549401243e
     secret: 26dc6bd2f719cafe1b9763260ba6182d
     token: 123456
+    authentication:
+      call-host: "http://3if8b6.natappfree.cc"
+      callback-url: "/wechat/callback"
+      state: "3d6be0a468839573b07016624a41e9"
